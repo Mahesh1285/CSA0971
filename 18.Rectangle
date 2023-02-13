@@ -1,0 +1,106 @@
+ import java.util.Scanner;
+
+    public class Rectangle
+{
+public static void main(String[] args)
+{
+
+    boolean loopExecuted;
+    String userContinue = "NO";
+
+    // Loop to ask to do another rectangle
+    do 
+    {
+
+    // Variables
+    int length;
+    int width;
+    String symbol;
+    char symbolz;
+    int xLength;
+    int yWidth;
+
+
+                    // Name Scanner
+    Scanner input = new Scanner(System.in);
+
+                    // What program will do
+    System.out.println("This program will print a rectangle with the symbol of your choice.  If you enter a positve integer the rectangle"
+            + "will be filled, if you enter a negative integer, it will print the outline of the rectangle.\n");
+
+
+                    // Ask for user input and check for validity
+
+        do 
+        {
+           System.out.println("Please enter the length of the rectangle that is less than or equal to -10 and less than or equal to 10.");
+           length = input.nextInt();
+        }
+        while (length < -10 || length > 10 || length == 0);
+
+        do
+        {
+           System.out.println("Please enter the width of the rectangle that is less than or equal to -10 and less than or equal to 10.");
+           width = input.nextInt();
+        }
+        while (width < -10 || width > 10 || width == 0);
+
+
+        System.out.println("Please enter the symbol to be used for the rectangle");
+        symbol = input.next();
+        symbolz = symbol.charAt(0);
+
+        System.out.println("You have entered the following values for length, width, and symbol: " + length + " ," + width + " ," + symbolz +"\n");
+
+
+                 // Algorithm to print filled in rectangle.
+
+        for (yWidth = 1; yWidth <= width; yWidth++) {
+            for (xLength = 1; xLength <= length; xLength++) {
+                System.out.print(symbolz);
+            }
+
+            System.out.println(" ");
+        }
+
+                // Algorithm to print outline of rectangle
+
+        //TODO 
+        for(yWidth = 1; yWidth >= width; yWidth--){
+            for (xLength = 1; xLength >= length; xLength--){
+                System.out.print(symbolz);
+            }
+
+            System.out.println(" ");
+        }
+
+
+                    // Repeat the program   
+
+     loopExecuted = false;  
+   do
+           {
+               if (!loopExecuted)
+               {
+                    System.out.println("\n\nWould you like to continue? Please either Yes or No");
+               }
+               else
+               {
+                   System.out.println("Please enter a valid response (Yes / No)");
+               }
+               userContinue = input.next();
+               userContinue = userContinue.toUpperCase();
+               loopExecuted = true;
+           }
+
+   while (!"YES".equals(userContinue) && !"NO".equals(userContinue));
+
+   // Case Insensitive
+
+    userContinue = userContinue.toUpperCase();
+
+    } 
+    while (userContinue.equals("YES"));
+
+    }
+   }
