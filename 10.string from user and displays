@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class test2 {
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a string");
+        String s = input.nextLine;
+        String lower = "";
+        String total = "";
+
+        for (int i = 0; i < s.length(); i++) {
+            char thisChar = s.charAt(i);
+        } if (thisChar >= 97 && thisChar <= 122) {
+            lower += thisChar;
+        }
+
+        System.out.println("Total amount of characters: " + s.length() + " - " + s);
+        System.out.println("Lower case letters: " + lower.length() + " - " + lower);    
+    }
+}
